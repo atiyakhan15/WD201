@@ -1,6 +1,6 @@
 const todoList = () => {
   let all = [];
-  const add = (todoItem) => {
+  const add = (todoItem) => { 
     all.push(todoItem);
   };
   const markAsComplete = (index) => {
