@@ -1,6 +1,6 @@
-const todoList = () => {
+todoList = () => {
   let all = [];
-  const add = (todoItem) => { 
+  const add = (todoItem) => {
     all.push(todoItem);
   };
   const markAsComplete = (index) => {
@@ -8,26 +8,26 @@ const todoList = () => {
   };
 
   let overdue = () => {
-    let today = new Date().toISOString().split("T")[0];
-    return all.filter((item) => item.dueDate < today);
+    let today_date = new Date().toISOString().split("T")[0];
+    return all.filter((item) => item.dueDate < today_date);
   };
 
   const dueToday = () => {
-    let today = new Date().toISOString().split("T")[0];
-    return all.filter((item) => item.dueDate === today);
+    let today_date = new Date().toISOString().split("T")[0];
+    return all.filter((item) => item.dueDate === today_date);
   };
 
   const dueLater = () => {
-    let today = new Date().toISOString().split("T")[0];
-    return all.filter((item) => item.dueDate > today);
+    let today_date = new Date().toISOString().split("T")[0];
+    return all.filter((item) => item.dueDate > today_date);
   };
 
   const toDisplayableList = (list) => {
     return list
       .map(
-        (todo) =>
-          `${todo.completed ? "[x]" : "[ ]"} ${todo.title} ${
-            todo.dueDate == today ? "" : todo.dueDate
+        (todo_task) =>
+          `${todo_task.completed ? "[x]" : "[ ]"} ${todo_task.title} ${
+            todo_task.dueDate == today ? "" : todo_task.dueDate
           }`
       )
       .join("\n");
